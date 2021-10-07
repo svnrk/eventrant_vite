@@ -1,12 +1,15 @@
 <template>
   <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
-    <h1 @click="goHome()">eventrant</h1>
+    <h1 @click="goHome()" class="fix-stroke">eventrant</h1>
     <input type="text" placeholder="Otsi.." onkeypress="keyup(key)">
-    <button @click="goHome()" class='btn'>Kõik</button>
-    <button @click="myEvents()" class='btn'>Minu</button>
-    <button @click="addEvent()" class='btn'>Lisa</button>
-    <button @click="onClick()" class='btn'>nupp</button>
+    <div>
+        <button @click="goHome()" class='btn'>Kõik</button>
+        <button @click="myEvents()" class='btn'>Minu</button>
+        <button @click="addEvent()" class='btn'>Lisa</button>
+        <button @click="onClick()" class='btn'>nupp</button>
+
+    </div>
   </header>
 </template>s
 
@@ -54,7 +57,9 @@ export default {
         align-items: right;
         padding-left: 20px;
         padding-right: 20px;
+        -webkit-text-stroke: 0px #2c3e50;
     }
+
 
     input[type=text] {
         float: right;
@@ -62,12 +67,13 @@ export default {
         border: none;
         color: #2c3e50;
         max-width: 200px;
+        
         /* margin-top: 8px;
         margin-left: 16px;
         font-size: 17px; */
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
     input[type=text] {
         float: none;
         display: block;
