@@ -1,15 +1,12 @@
 
 <template>
-  <!-- <AllEvents :events="events"/> -->
   <router-view/>
 </template>
 
 <script >
-import AllEvents from './components/AllEvents.vue'
 
 export default {
   name: 'App'
-
 }
 </script>
 

@@ -5,7 +5,7 @@
         <p>
             {{event.performer}}
         </p>
-        <p>
+        <p id="location">
             {{event.location}}
         </p>
     </span>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Event',
   props: {

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AllEvents from '/src/components/AllEvents.vue'
+import AllEvents from '../components/AllEvents.vue'
 const routes = [
   {
     path: '/',
