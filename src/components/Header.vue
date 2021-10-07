@@ -2,7 +2,7 @@
   <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
     <h1 @click="goHome()">eventrant</h1>
-    <input type="text" placeholder="Otsi.." @onkeypress="keyup(key)">
+    <input type="text" placeholder="Otsi.." onkeypress="keyup(key)">
     <button @click="goHome()" class='btn'>Kõik</button>
     <button @click="myEvents()" class='btn'>Minu</button>
     <button @click="addEvent()" class='btn'>Lisa</button>
@@ -25,6 +25,9 @@ export default {
     },
     onClick () {
       console.log('click')
+    },
+    keyup(key) {
+        console.log(key)
     }
   }
 }
