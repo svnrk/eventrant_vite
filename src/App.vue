@@ -8,7 +8,7 @@
 import AllEvents from './components/AllEvents.vue'
 
 export default {
-  name: 'App',
+  name: 'App'
 
 }
 </script>

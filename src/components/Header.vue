@@ -29,8 +29,8 @@ export default {
     onClick () {
       console.log('click')
     },
-    keyup(key) {
-        console.log(key)
+    keyup (key) {
+      console.log(key)
     }
   }
 }
@@ -60,14 +60,13 @@ export default {
         -webkit-text-stroke: 0px #2c3e50;
     }
 
-
     input[type=text] {
         float: right;
         padding: 3px 10px;
         border: none;
         color: #2c3e50;
         max-width: 200px;
-        
+
         /* margin-top: 8px;
         margin-left: 16px;
         font-size: 17px; */
