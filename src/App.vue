@@ -1,12 +1,10 @@
 
-
 <template>
-  <Header />
-  <div class="container">
-    <Events :events="events"/>
-    
-    
-
+  <div>
+    <Header />
+    <div class="container">
+      <Events :events="events"/>
+    </div>
   </div>
 </template>
 
@@ -14,18 +12,18 @@
 import Header from './components/Header.vue'
 import Events from './components/Events.vue'
 
-export default{
+export default {
   name: 'App',
   components: {
     Header,
     Events
   },
-  data() {
+  data () {
     return {
       events: []
     }
   },
-  created(){
+  created () {
     this.events = [
       {
         id: 1,
@@ -35,7 +33,7 @@ export default{
         date: '10.10.2021',
         time: '19.00',
         avg_rating: 0,
-        ratings_count: 0,
+        ratings_count: 0
       },
       {
         id: 2,
@@ -45,7 +43,7 @@ export default{
         date: '11.10.2021',
         time: '19.00',
         avg_rating: 0,
-        ratings_count: 0,
+        ratings_count: 0
       },
       {
         id: 3,
@@ -55,7 +53,7 @@ export default{
         date: '10.12.2021',
         time: '13.00',
         avg_rating: 0,
-        ratings_count: 0,
+        ratings_count: 0
       },
       {
         id: 4,
@@ -65,7 +63,7 @@ export default{
         date: '10.10.2022',
         time: '19.00',
         avg_rating: 0,
-        ratings_count: 0,
+        ratings_count: 0
       },
       {
         id: 5,
@@ -75,7 +73,7 @@ export default{
         date: '11.10.2022',
         time: '19.00',
         avg_rating: 0,
-        ratings_count: 0,
+        ratings_count: 0
       },
       {
         id: 6,
@@ -85,9 +83,9 @@ export default{
         date: '10.12.2022',
         time: '13.00',
         avg_rating: 0,
-        ratings_count: 0,
-      },
-      
+        ratings_count: 0
+      }
+
     ]
   }
 }
@@ -105,8 +103,6 @@ export default{
   color: whitesmoke;
 }
 
-
-
 .container{
   max-width: 900px;
   margin: 0px auto;
@@ -116,8 +112,6 @@ export default{
   padding: 10px;
   border-radius: 0px;
   background: #714040;
-  
-  
 
 }
 .btn {

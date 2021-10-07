@@ -1,21 +1,24 @@
 <template>
-  <div :key='event.id' v-for="event in events">
-      <Event :event='event' />
+    <div>
+        <div :key='event.id' v-for="event in events">
+            <Event :event='event' />
 
-  </div>
+        </div>
+
+    </div>
 </template>
 
-<script> 
+<script>
 import Event from './Event.vue'
 
 export default {
-    name: 'Events',
-    props: {
-        events: Array,
-    },
-    components: {
-        Event
-    }
+  name: 'Events',
+  props: {
+    events: Array
+  },
+  components: {
+    Event
+  }
 }
 </script>
 
