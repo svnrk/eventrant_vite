@@ -6,10 +6,13 @@
         <Text>Kellaaeg: {{yritus.time}}</Text>
         <Text>Koht: {{yritus.location}}</Text>
         <Small_text_header>Hinnang</Small_text_header>
-        <Text1>Üldhinnang: {{yritus.avg_rating}}/5</Text1>
-        <Text1>Esineja: {{yritus.performer_rating}}/5</Text1>
-        <Text1>Publik: {{yritus.public_rating}}/5</Text1>
-        <Text1>Korraldus: {{yritus.organization_rating}}/5</Text1>
+        <span>
+        <Text1>Publik: {{isValues(yritus.public_rating)}}/5</Text1>
+        <Text1>Korraldus: {{isValues(yritus.organization_rating)}}/5</Text1>
+        </span>
+        <Text1>Üldhinnang: {{isValues(yritus.avg_rating)}}/5</Text1>
+        <Text1>Esineja: {{isValues(yritus.performer_rating)}}/5</Text1>
+        <Text1>Arvutusi kokku: {{isValues(yritus.ratings_count)}}</Text1>
     </div>
 
 </template>
@@ -20,29 +23,35 @@ export default {
   name: 'Hinnang',
   props: {
     yritus: Object
+  },
+  methods: {
+    isValues (value) {
+      console.log(value)
+
+      if (value === Number) {
+        return ' -'
+      } else {
+        return value
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
     header {
-        text-align: left;
         color: rgb(255, 255, 255);
         justify-content: space-between;
         align-items: 'position';
         margin-bottom: 20px;
     }
     Text1 {
-        text-align: left;
-        color: aqua;
-        display: flex;
-        justify-content: space-between;
-        align-items: 'position';
-        margin-bottom: 10px;
+      color: aqua;
+      display: flex;
+      margin-bottom: 10px;
     }
     Text {
         font-size: 20px;
-        text-align: left;
         color: rgb(172, 154, 154);
         display: flex;
         justify-content: space-between;
@@ -51,12 +60,15 @@ export default {
     }
     Small_Text_header {
         font-size: 25px;
-        text-align: left;
         color: rgb(255, 255, 255);
         display: flex;
         justify-content: space-between;
         align-items: 'position';
         margin-bottom: 15px;
     }
+    span {
+    float: right;
+    text-align: right;
+}
 
 </style>

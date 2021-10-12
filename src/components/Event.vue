@@ -1,5 +1,5 @@
 <template>
-  <div class='small_event' @click="selectEvent(event.id); close()">
+  <div class='small_event' @click="selectEvent(event.id); toggle_window()">
     <div v-if ="!isOpen">
       <h3>{{event.event}}</h3>
       <span>
@@ -14,7 +14,7 @@
           {{event.date}}, {{event.time}}
       </p>
     </div>
-    <div class = 'box'  v-if="isOpen">
+    <div  v-if="isOpen">
       <Hinnang :yritus="event"/>
     </div>
   </div>
@@ -40,7 +40,7 @@ export default {
       console.log(id)
     },
 
-    close () {
+    toggle_window () {
       if (this.isOpen === true) {
         this.isOpen = false
       } else {
@@ -82,7 +82,6 @@ span {
 }
 
 .box {
-  text-align: left;
   margin: 30px auto;
   overflow: auto;
   border: 1px solid #2c3e50;
