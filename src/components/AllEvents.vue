@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header />
         <div class="container">
             <Events :events="events"/>
         </div>
@@ -8,13 +7,11 @@
 </template>
 
 <script>
-import Header from './Header.vue'
 import Events from './Events.vue'
 
 export default {
   name: 'AllEvents',
   components: {
-    Header,
     Events
   },
 
