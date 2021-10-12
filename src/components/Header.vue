@@ -7,7 +7,7 @@
         <button @click="$router.push('/')" class='btn'>Kõik</button>
         <button @click="myEvents()" class='btn'>Minu</button>
         <button @click="$router.push('addevent')" class='btn'>Lisa</button>
-        <button @click="onClick()" class='btn'>nupp</button>
+        <button @click="onClick()" class='btn'>Sätted</button>
         <router-link to="/"></router-link>
     </div>
   </header>
