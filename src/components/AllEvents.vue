@@ -29,8 +29,11 @@ export default {
         location: 'Kolme Konna Trahter, Elva',
         date: '10.10.2021',
         time: '19.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: 2,
+        performer_rating: 4,
+        public_rating: 2,
+        organization_rating: 5,
+        ratings_count: 6
       },
       {
         id: 2,
@@ -39,8 +42,11 @@ export default {
         location: 'Hall, Rakvere',
         date: '11.10.2021',
         time: '19.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: 1,
+        performer_rating: 2,
+        public_rating: Number,
+        organization_rating: 5,
+        ratings_count: 8
       },
       {
         id: 3,
@@ -49,8 +55,11 @@ export default {
         location: 'Järvejää, Viljandi',
         date: '10.12.2021',
         time: '13.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: 5,
+        performer_rating: 2,
+        public_rating: Number,
+        organization_rating: 4,
+        ratings_count: 2
       },
       {
         id: 4,
@@ -59,8 +68,11 @@ export default {
         location: 'Jzzi Lounge, Keila',
         date: '10.10.2022',
         time: '19.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: 2,
+        performer_rating: Number,
+        public_rating: Number,
+        organization_rating: Number,
+        ratings_count: Number
       },
       {
         id: 5,
@@ -69,8 +81,11 @@ export default {
         location: 'Hall, Rakvere',
         date: '11.10.2022',
         time: '19.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: 1,
+        performer_rating: Number,
+        public_rating: Number,
+        organization_rating: Number,
+        ratings_count: Number
       },
       {
         id: 6,
@@ -79,8 +94,11 @@ export default {
         location: 'Järvejää, Viljandi',
         date: '10.12.2022',
         time: '13.00',
-        avg_rating: 0,
-        ratings_count: 0
+        avg_rating: Number,
+        performer_rating: Number,
+        public_rating: Number,
+        organization_rating: Number,
+        ratings_count: Number
       }
 
     ]
