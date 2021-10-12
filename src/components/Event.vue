@@ -1,5 +1,5 @@
 <template>
-  <div v-show="event.id != selected" class='small_event' @click="selectEvent(event.id)">
+  <div  class='small_event' @click="selectEvent(event.id)">
     <h3>{{event.event}}</h3>
     <span>
         <p>
@@ -12,28 +12,8 @@
     <p>
         {{event.date}}, {{event.time}}
     </p>
-    <p v-if="event.id === selected">
-      {{event.id}}
-    </p>
   </div>
-  
-  <div v-if="event.id === selected" class='large_event' @click="selectEvent(event.id)">
-    <h2>{{event.event}}</h2>
 
-    <h3>
-        {{event.performer}}
-    </h3>
-    <p id="location">
-        {{event.location}}
-    </p>
-
-    <p>
-        {{event.date}}, {{event.time}}
-    </p>
-    <p v-if="event.id === selected">
-      {{event.id}}
-    </p>
-  </div>
 </template>
 
 <script>
@@ -49,9 +29,9 @@ export default {
       this.selected = id
     }
   },
-  data(){
-    return{
-      selected : 0
+  data () {
+    return {
+      selected: 0
     }
   }
 }
