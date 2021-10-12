@@ -2,7 +2,7 @@
   <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
     <h1 @click="$router.push('/')" class="fix-stroke">eventrant</h1>
-    <input type="text" placeholder="Otsi.." v-on:keyup.enter="submit">
+    <input type="text" v-model="search" name='search' v-on:keyup.enter="submit()" placeholder="Otsi...">
     <div>
         <button @click="$router.push('/')" class='btn'>Kõik</button>
         <button @click="myEvents()" class='btn'>Minu</button>
@@ -30,8 +30,15 @@ export default {
       console.log('click')
     },
     submit () {
-      console.log('otsi')
+      console.log(this.search)
     }
+    },
+    data() {
+      return {
+        search: ''
+
+      }
+
   }
 }
 </script>
