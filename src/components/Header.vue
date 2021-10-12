@@ -1,14 +1,14 @@
 <template>
   <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
-    <h1 @click="goHome()" class="fix-stroke">eventrant</h1>
-    <input type="text" placeholder="Otsi.." onkeypress="keyup(key)">
+    <h1 @click="$router.push('/')" class="fix-stroke">eventrant</h1>
+    <input type="text" placeholder="Otsi.." v-on:keyup.enter="submit">
     <div>
-        <button @click="goHome()" class='btn'>Kõik</button>
+        <button @click="$router.push('/')" class='btn'>Kõik</button>
         <button @click="myEvents()" class='btn'>Minu</button>
-        <button @click="addEvent()" class='btn'>Lisa</button>
+        <button @click="$router.push('addevent')" class='btn'>Lisa</button>
         <button @click="onClick()" class='btn'>nupp</button>
-
+        <router-link to="/"></router-link>
     </div>
   </header>
 </template>s
@@ -29,8 +29,8 @@ export default {
     onClick () {
       console.log('click')
     },
-    keyup (key) {
-      console.log(key)
+    submit () {
+      console.log('otsi')
     }
   }
 }
