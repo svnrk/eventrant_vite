@@ -1,7 +1,7 @@
 <template>
 
-  <div class='small_event' @click="selectEvent(event.id); toggle_window()">
-    <div v-if ="!isOpen">
+  <div class='small_event' @click="selectEvent(event.id); toggle_event()">
+    <div v-if ="!isOpen" >
       <h3>{{event.event}}</h3>
       <span>
           <p>
@@ -15,19 +15,35 @@
           {{event.date}}, {{event.time}}
       </p>
     </div>
-    <div  v-if="isOpen">
-      <Hinnang :yritus="event"/>
-    </div>
 
+    <div  v-if="isOpen">
+      <Rating :yritus="event"/>
+      <div v-if="!rate_window">
+        <span>
+          <button class='btn' @click="open_rate_window()">Hinda</button>
+        </span>
+        <RatingBox :event="event"/>
+      </div>
+
+      <div v-if="rate_window">
+        <span>
+          <button class='btn' @click="open_rate_window()">Sulge</button>
+        </span>
+        <Checkbox />
+      </div>
+    
+    </div>
   </div>
 
 </template>
 
 <script>
-import Hinnang from './hinnang.vue'
+import Rating from './Rating.vue'
+import Checkbox from './hindama.vue'
+import RatingBox from './RatingBox.vue'
 
 export default {
-  components: { Hinnang },
+  components: { Rating, Checkbox, RatingBox },
   name: 'Event',
   props: {
     event: Object
@@ -35,22 +51,34 @@ export default {
 
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      rate_window: false
     }
   },
+
   methods: {
     selectEvent (id) {
       console.log(id)
-
     },
 
-    toggle_window () {
-      if (this.isOpen === true) {
-        this.isOpen = false
+    toggle_event () {
+      if (!this.rate_window) {
+        if (this.isOpen === true) {
+          this.isOpen = false
+        } else {
+          this.isOpen = true
+        }
+      }
+    },
+
+    open_rate_window () {
+      if (this.rate_window === true) {
+        this.rate_window = false
+        // this.isOpen = false
       } else {
+        this.rate_window = true
         this.isOpen = true
       }
-
     }
   }
 }
@@ -95,5 +123,4 @@ span {
   background-color: #473030;
   color: rgb(189, 180, 180);
 }
-
 </style>
