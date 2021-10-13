@@ -24,14 +24,27 @@ export default {
   props: {
     yritus: Object
   },
+  data () {
+    return {
+    }
+  },
+
   methods: {
     isValues (value) {
-      console.log(value)
-
       if (value === Number) {
         return ' -'
       } else {
         return value
+      }
+    },
+
+    open_add_window () {
+      if (this.add_window === true) {
+        this.add_window = false
+        console.log(this.add_window)
+      } else {
+        this.add_window = true
+        console.log(this.add_window)
       }
     }
   }
