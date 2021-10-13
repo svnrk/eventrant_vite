@@ -26,7 +26,6 @@ export default {
       const data = await res.json()
 
       return data
-
     }
   }, 
   async created () {

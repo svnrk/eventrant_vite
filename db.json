@@ -78,5 +78,11 @@
         "organization_rating": 0,
         "ratings_count": 0
     }
+    ],
+    "performers": [
+        {
+            "performer": "Kukerpillid",
+            "image": "https://www.digar.ee/viewer/covers/6/1/7/81716/full.jpg"
+        }
     ]
 }
