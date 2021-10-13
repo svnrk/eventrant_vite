@@ -16,7 +16,7 @@
       </p>
     </div>
     <div  v-if="isOpen">
-      <Hinnang :yritus="event"/>
+      <Rating :yritus="event"/>
     </div>
 
   </div>
@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import Hinnang from './hinnang.vue'
+import Rating from './Rating.vue'
 
 export default {
-  components: { Hinnang },
+  components: { Rating },
   name: 'Event',
   props: {
     event: Object
@@ -41,7 +41,6 @@ export default {
   methods: {
     selectEvent (id) {
       console.log(id)
-
     },
 
     toggle_window () {
@@ -50,7 +49,6 @@ export default {
       } else {
         this.isOpen = true
       }
-
     }
   }
 }

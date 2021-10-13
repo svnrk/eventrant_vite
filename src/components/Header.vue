@@ -32,13 +32,12 @@ export default {
     submit () {
       console.log(this.search)
     }
-    },
-    data() {
-      return {
-        search: ''
+  },
+  data () {
+    return {
+      search: ''
 
-      }
-
+    }
   }
 }
 </script>
