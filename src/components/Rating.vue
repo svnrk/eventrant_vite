@@ -12,7 +12,7 @@
         </span>
         <Text1>Üldhinnang: {{isValues(yritus.avg_rating)}}/5</Text1>
         <Text1>Esineja: {{isValues(yritus.performer_rating)}}/5</Text1>
-        <Text1>Arvutusi kokku: {{isValues(yritus.ratings_count)}}</Text1>
+        <Text1>Arvustusi kokku: {{isValues(yritus.ratings_count)}}</Text1>
     </div>
 
 </template>
@@ -20,7 +20,7 @@
 <script>
 
 export default {
-  name: 'Hinnang',
+  name: 'Rating',
   props: {
     yritus: Object
   },
