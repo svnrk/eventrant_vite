@@ -24,11 +24,11 @@ export default {
     },
     methods: {
         isValues (value) {
-            if (value === 0) {
-                return ' -'
+            if (value > 0 && value <= 5) {
+                return value
             } 
             else {
-                return value
+                return ' -'
             }
         }
     }
