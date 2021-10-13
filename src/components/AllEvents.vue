@@ -2,6 +2,7 @@
     <div>
         <div class="container">
             <Events :events="events"/>
+            <!-- <Events :events="filteredList"/> -->
         </div>
     </div>
 </template>
@@ -111,8 +112,15 @@ export default {
     //   }
 
     // ]
-  }
-
+  },
+  // computed: {
+  //   filteredList() {
+  //     return this.events.filter(event => {
+  //       console.log(event)
+  //       return event.event.toLowerCase().includes(this.search.toLowerCase())
+  //     })
+  //   }
+  // }
 }
 </script>
 
