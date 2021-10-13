@@ -10,14 +10,14 @@
         <Text>Kellaaeg: {{yritus.time}}</Text>
         <Text>Koht: {{yritus.location}}</Text>
 
-        <Small_text_header>Hinnang</Small_text_header>
+        <!-- <Small_text_header>Hinnang</Small_text_header>
         <span>
           <Text1>Publik: {{isValues(yritus.public_rating)}}/5</Text1>
           <Text1>Korraldus: {{isValues(yritus.organization_rating)}}/5</Text1>
         </span>
         <Text1>Üldhinnang: {{isValues(yritus.avg_rating)}}/5</Text1>
         <Text1>Esineja: {{isValues(yritus.performer_rating)}}/5</Text1>
-        <Text1>Arvustusi kokku: {{isValues(yritus.ratings_count)}}</Text1>
+        <Text1>Arvustusi kokku: {{isValues(yritus.ratings_count)}}</Text1> -->
     </div>
 
 </template>

@@ -1,7 +1,7 @@
 <template>
 
   <div class='small_event' @click="selectEvent(event.id); toggle_event()">
-    <div v-if ="!isOpen && !add_window" >
+    <div v-if ="!isOpen" >
       <h3>{{event.event}}</h3>
       <span>
           <p>
@@ -15,17 +15,24 @@
           {{event.date}}, {{event.time}}
       </p>
     </div>
+
     <div  v-if="isOpen">
       <Rating :yritus="event"/>
-      <button class='btn' @click="open_add_window()">Hinda</button>
-    </div>
-    <div v-if="add_window">
-      <span>
-      <button class='btn' @click="open_add_window()">close</button>
-      </span>
-      <Checkbox></Checkbox>
-    </div>
+      <div v-if="!rate_window">
+        <span>
+          <button class='btn' @click="open_rate_window()">Hinda</button>
+        </span>
+        <RatingBox :event="event"/>
+      </div>
 
+      <div v-if="rate_window">
+        <span>
+          <button class='btn' @click="open_rate_window()">Sulge</button>
+        </span>
+        <Checkbox />
+      </div>
+    
+    </div>
   </div>
 
 </template>
@@ -33,9 +40,10 @@
 <script>
 import Rating from './Rating.vue'
 import Checkbox from './hindama.vue'
+import RatingBox from './RatingBox.vue'
 
 export default {
-  components: { Rating, Checkbox },
+  components: { Rating, Checkbox, RatingBox },
   name: 'Event',
   props: {
     event: Object
@@ -44,7 +52,7 @@ export default {
   data () {
     return {
       isOpen: false,
-      add_window: false
+      rate_window: false
     }
   },
 
@@ -54,7 +62,7 @@ export default {
     },
 
     toggle_event () {
-      if (!this.add_window) {
+      if (!this.rate_window) {
         if (this.isOpen === true) {
           this.isOpen = false
         } else {
@@ -63,13 +71,13 @@ export default {
       }
     },
 
-    open_add_window () {
-      if (this.add_window === true) {
-        this.add_window = false
-        this.isOpen = false
+    open_rate_window () {
+      if (this.rate_window === true) {
+        this.rate_window = false
+        // this.isOpen = false
       } else {
-        this.add_window = true
-        this.isOpen = false
+        this.rate_window = true
+        this.isOpen = true
       }
     }
   }
