@@ -6,9 +6,11 @@
     "build": "vite build",
     "serve": "vite preview",
     "check": "npx eslint --ext .js,.vue src",
-    "fix": "npx eslint --ext .js,.vue src --fix"
+    "fix": "npx eslint --ext .js,.vue src --fix",
+    "backend": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "json-server": "^0.17.0",
     "vue": "^3.2.16",
     "vue-router": "^4.0.11"
   },
