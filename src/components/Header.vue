@@ -1,13 +1,13 @@
 <template>
   <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
-    <h1 @click="$router.push('/')" class="fix-stroke">eventrant</h1>
+    <h1 @click="goHome()" class="fix-stroke">eventrant</h1>
     <input type="text" v-model="search" name='search' v-on:keyup.enter="submit()" placeholder="Otsi...">
     <div>
-        <button @click="$router.push('/')" class='btn'>Kõik</button>
+        <button @click="goHome()" class='btn'>Kõik</button>
         <button @click="myEvents()" class='btn'>Minu</button>
-        <button @click="$router.push('addevent')" class='btn'>Lisa</button>
-        <button @click="onClick()" class='btn'>Sätted</button>
+        <button @click="addEvent()" class='btn'>Lisa</button>
+        <button @click="goToSettings()" class='btn'>Sätted</button>
         <router-link to="/"></router-link>
     </div>
   </header>
@@ -19,15 +19,18 @@ export default {
   methods: {
     goHome () {
       console.log('home')
+      this.$router.push('/')
     },
     addEvent () {
       console.log('add')
+      this.$router.push('addevent')
     },
     myEvents () {
       console.log('my')
     },
-    onClick () {
+    goToSettings () {
       console.log('click')
+      this.$router.push('settings')
     },
     submit () {
       console.log(this.search)
