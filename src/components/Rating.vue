@@ -1,14 +1,18 @@
 <template>
     <div>
-        <Small_text_header>{{yritus.event}}</Small_text_header>
+        <h2>{{yritus.event}}</h2>
+        <span :v-show="image_path.length > 3">
+          <img :src="this.image_path" />
+        </span>
         <Text>Esitaja: {{yritus.performer}}</Text>
         <Text>Kuupäev: {{yritus.date}}</Text>
         <Text>Kellaaeg: {{yritus.time}}</Text>
         <Text>Koht: {{yritus.location}}</Text>
+
         <Small_text_header>Hinnang</Small_text_header>
         <span>
-        <Text1>Publik: {{isValues(yritus.public_rating)}}/5</Text1>
-        <Text1>Korraldus: {{isValues(yritus.organization_rating)}}/5</Text1>
+          <Text1>Publik: {{isValues(yritus.public_rating)}}/5</Text1>
+          <Text1>Korraldus: {{isValues(yritus.organization_rating)}}/5</Text1>
         </span>
         <Text1>Üldhinnang: {{isValues(yritus.avg_rating)}}/5</Text1>
         <Text1>Esineja: {{isValues(yritus.performer_rating)}}/5</Text1>
@@ -27,15 +31,37 @@ export default {
   methods: {
     isValues (value) {
       console.log(value)
-
-      if (value === Number) {
+      if (value === 0) {
         return ' -'
-      } else {
+      } 
+      else {
         return value
       }
+    },
+    async fetchImage(performer){
+      const res = await fetch("http://localhost:5000/performers")
+      const data = await res.json()
+      data.forEach(e => {
+        if (performer === e.performer) {
+          this.image_path =  e.image
+        }
+      })
     }
+
+  },
+  data () {
+    return {
+      image_path: " "
+    }
+  },
+
+  async created() {
+    console.log("begin")
+    console.log(this.yritus.performer)
+    this.image_path = await this.fetchImage(this.yritus.performer)
   }
 }
+
 </script>
 
 <style scoped>
@@ -67,8 +93,14 @@ export default {
         margin-bottom: 15px;
     }
     span {
-    float: right;
-    text-align: right;
-}
+      float: right;
+      text-align: right;
+    }
+    img {
+      width: 128px;
+      height: 128px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
 
 </style>
