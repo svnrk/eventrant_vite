@@ -4,36 +4,32 @@
         <br>
         <Pealkiri>Lisa sündmus</Pealkiri>
 
-        <br>
-        <Small_Text_header>Üritus:</Small_Text_header>
-        <p style="white-space: pre-line; color: black">{{ message }}</p>
-        <textarea v-model="message" placeholder="lisa üritus"></textarea>
+        <div class='borders'>
+          <br>
+          <Small_Text_header>Üritus:</Small_Text_header>
+          <p style="white-space: pre-line; color: black">{{ message }}</p>
+          <textarea v-model="message" placeholder="lisa üritus"></textarea>
 
 
-        <Small_Text_header>Esineja:</Small_Text_header>
-        <p style="white-space: pre-line;">{{ message }}</p>
-        <textarea v-model="message" placeholder="lisa esineja(d)"></textarea>
+          <Small_Text_header>Esineja:</Small_Text_header>
+          <p style="white-space: pre-line;">{{ message }}</p>
+          <textarea v-model="message" placeholder="lisa esineja(d)"></textarea>
 
-        <Small_Text_header>Aeg:</Small_Text_header>
-        <!-- <p style="white-space: pre-line;">{{ message }}</p> -->
-        <textarea v-model="message" placeholder="lisa aeg"></textarea>
+          <Small_Text_header>Aeg:</Small_Text_header>
+          <!-- <p style="white-space: pre-line;">{{ message }}</p> -->
+          <textarea v-model="message" placeholder="lisa aeg"></textarea>
 
-        <Small_Text_header>Koht:</Small_Text_header>
-        <p style="white-space: pre-line;">{{ message }}</p>
-        <textarea v-model="message" placeholder="lisa koht"></textarea>
-
-        <!-- <br>
-        <h1>testing</h1>
-        <input type="text" placeholder="otsi" v-on:keyup.enter="submit">
-        <h1>testing is over</h1> -->
+          <Small_Text_header>Koht:</Small_Text_header>
+          <p style="white-space: pre-line;">{{ message }}</p>
+          <textarea v-model="message" placeholder="lisa koht"></textarea>
+          <br>
+        </div>
 
         <div id="adding">
           <button v-on:click="greet">LISA</button>
         </div>
-        
         <br>
       </div>
-
   </div>
 </template>
 
@@ -49,6 +45,15 @@ export default {
 </script>
 
 <style scoped>
+.borders {
+    border: 1px solid #2c3e50;
+    margin: 5px auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 500px;
+    background: #470000;
+}
   Pealkiri {
     font-size: 30px;
     font-weight: 600;
