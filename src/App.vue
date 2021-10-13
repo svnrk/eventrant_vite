@@ -1,23 +1,23 @@
 
 <template>
-<div>
-  <Header/>
-  <router-view/>
-</div>
+  <div>
+    <Header />
+    <router-view />
+  </div>
 </template>
 
 <script >
-import Header from './components/Header.vue'
+import Header from "./components/Header.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header
-  }
-}
+    Header,
+  },
+};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 * {
   /* background: #470000; */
@@ -28,7 +28,11 @@ export default {
   color: whitesmoke;
 }
 
-.container{
+textarea {
+  color: black;
+}
+
+.container {
   max-width: 900px;
   margin: 0px auto;
   overflow: auto;
@@ -37,7 +41,6 @@ export default {
   padding: 10px;
   border-radius: 0px;
   background: #714040;
-
 }
 .btn {
   display: inline-block;
