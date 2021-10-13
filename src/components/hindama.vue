@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 select option {
 
@@ -40,5 +40,6 @@ select option {
   color: rgb(0, 0, 0);
   text-shadow: 0 5px 0 rgba(0, 0, 0, 1);
 }
+
 
 </style>
