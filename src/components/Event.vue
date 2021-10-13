@@ -16,7 +16,7 @@
       </p>
     </div>
     <div  v-if="isOpen">
-      <Hinnang :yritus="event"/>
+      <Rating :yritus="event"/>
       <button class='btn' @click="open_add_window()">Hinda</button>
     </div>
     <div v-if="add_window">
@@ -31,11 +31,11 @@
 </template>
 
 <script>
-import Hinnang from './hinnang.vue'
+import Rating from './Rating.vue'
 import Checkbox from './hindama.vue'
 
 export default {
-  components: { Hinnang, Checkbox },
+  components: { Rating, Checkbox },
   name: 'Event',
   props: {
     event: Object
