@@ -4,6 +4,7 @@
         <span :v-show="image_path.length > 3">
           <img :src="this.image_path" />
         </span>
+
         <Text>Esitaja: {{yritus.performer}}</Text>
         <Text>Kuupäev: {{yritus.date}}</Text>
         <Text>Kellaaeg: {{yritus.time}}</Text>
@@ -36,7 +37,7 @@ export default {
 
   methods: {
     isValues (value) {
-      if (value === Number) {
+      if (value === 0) {
         return ' -'
       } else {
         return value
