@@ -39,14 +39,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-select option {
+select {
+  color:#000000;
 
-  margin: 40px;
-  background: rgba(0, 0, 0, 0.3);
-  color: rgb(0, 0, 0);
-  text-shadow: 0 5px 0 rgba(0, 0, 0, 1);
+  margin: 3px;
 }
 
 </style>

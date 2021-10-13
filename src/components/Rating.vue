@@ -5,10 +5,10 @@
           <img :src="this.image_path" />
         </span>
 
-        <Text>Esitaja: {{yritus.performer}}</Text>
-        <Text>Kuupäev: {{yritus.date}}</Text>
-        <Text>Kellaaeg: {{yritus.time}}</Text>
-        <Text>Koht: {{yritus.location}}</Text>
+        <text>Esitaja: {{yritus.performer}}</text>
+        <text>Kuupäev: {{yritus.date}}</text>
+        <text>Kellaaeg: {{yritus.time}}</text>
+        <text>Koht: {{yritus.location}}</text>
 
         <!-- <Small_text_header>Hinnang</Small_text_header>
         <span>
@@ -50,17 +50,20 @@ export default {
         if (performer === e.performer) {
           this.image_path = e.image
         }
+        else {
+          this.image_path = ' '
+        }
       })
     },
-    open_add_window () {
-      if (this.add_window === true) {
-        this.add_window = false
-        console.log(this.add_window)
-      } else {
-        this.add_window = true
-        console.log(this.add_window)
-      }
-    }
+    // open_add_window () {
+    //   if (this.add_window === true) {
+    //     this.add_window = false
+    //     console.log(this.add_window)
+    //   } else {
+    //     this.add_window = true
+    //     console.log(this.add_window)
+    //   }
+    // }
 
   },
 
@@ -85,7 +88,7 @@ export default {
       display: flex;
       margin-bottom: 10px;
     }
-    Text {
+    text {
         font-size: 20px;
         color: rgb(172, 154, 154);
         display: flex;
