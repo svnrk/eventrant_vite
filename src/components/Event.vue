@@ -1,7 +1,7 @@
 <template>
 
-  <div class='small_event' @click="selectEvent(event.id); toggle_window()">
-    <div v-if ="!isOpen">
+  <div class='small_event' @click="selectEvent(event.id); toggle_event()">
+    <div v-if ="!isOpen && !add_window" >
       <h3>{{event.event}}</h3>
       <span>
           <p>
@@ -16,7 +16,14 @@
       </p>
     </div>
     <div  v-if="isOpen">
-      <Rating :yritus="event"/>
+      <Hinnang :yritus="event"/>
+      <button class='btn' @click="open_add_window()">Hinda</button>
+    </div>
+    <div v-if="add_window">
+      <span>
+      <button class='btn' @click="open_add_window()">close</button>
+      </span>
+      <Checkbox></Checkbox>
     </div>
 
   </div>
@@ -24,10 +31,11 @@
 </template>
 
 <script>
-import Rating from './Rating.vue'
+import Hinnang from './hinnang.vue'
+import Checkbox from './hindama.vue'
 
 export default {
-  components: { Rating },
+  components: { Hinnang, Checkbox },
   name: 'Event',
   props: {
     event: Object
@@ -35,19 +43,33 @@ export default {
 
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      add_window: false
     }
   },
+
   methods: {
     selectEvent (id) {
       console.log(id)
     },
 
-    toggle_window () {
-      if (this.isOpen === true) {
+    toggle_event () {
+      if (!this.add_window) {
+        if (this.isOpen === true) {
+          this.isOpen = false
+        } else {
+          this.isOpen = true
+        }
+      }
+    },
+
+    open_add_window () {
+      if (this.add_window === true) {
+        this.add_window = false
         this.isOpen = false
       } else {
-        this.isOpen = true
+        this.add_window = true
+        this.isOpen = false
       }
     }
   }
@@ -93,5 +115,4 @@ span {
   background-color: #473030;
   color: rgb(189, 180, 180);
 }
-
 </style>
