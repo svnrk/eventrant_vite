@@ -30,6 +30,7 @@ export default {
   },
   data () {
     return {
+      image_path: ' '
     }
   },
 
@@ -37,17 +38,16 @@ export default {
     isValues (value) {
       if (value === Number) {
         return ' -'
-      } 
-      else {
+      } else {
         return value
       }
     },
-    async fetchImage(performer){
-      const res = await fetch("http://localhost:5000/performers")
+    async fetchImage (performer) {
+      const res = await fetch('http://localhost:5000/performers')
       const data = await res.json()
       data.forEach(e => {
         if (performer === e.performer) {
-          this.image_path =  e.image
+          this.image_path = e.image
         }
       })
     },
@@ -62,14 +62,9 @@ export default {
     }
 
   },
-  data () {
-    return {
-      image_path: " "
-    }
-  },
-  
-  async created() {
-    console.log("begin")
+
+  async created () {
+    console.log('begin')
     console.log(this.yritus.performer)
     this.image_path = await this.fetchImage(this.yritus.performer)
   }

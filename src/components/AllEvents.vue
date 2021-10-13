@@ -21,13 +21,13 @@ export default {
     }
   },
   methods: {
-    async fetchEvents(){
+    async fetchEvents () {
       const res = await fetch('http://localhost:5000/events')
       const data = await res.json()
 
       return data
     }
-  }, 
+  },
   async created () {
     this.events = await this.fetchEvents()
     // this.events = [
