@@ -1,10 +1,10 @@
 <template>
 <div>
   <div>
-    <input type="checkbox" id="checkbox" value="true" v-model="valik">
-    <label for="">Kas soovid hinnata täpsemalt?</label>
-    <br>
     <Dropmenu tekst="Sisesta üldine hinnang üritusele"/>
+    <label for="">Hinda täpsemalt? </label>
+    <input type="checkbox" id="checkbox" value="true" v-model="valik">
+    <br>
   </div>
   <div v-if="valik">
     <Dropmenu tekst="Sisesta hinnang publikule"/>

@@ -123,4 +123,7 @@ span {
   background-color: #473030;
   color: rgb(189, 180, 180);
 }
+.btn {
+  background-color: #473030;
+}
 </style>
