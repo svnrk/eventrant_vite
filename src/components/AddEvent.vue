@@ -31,7 +31,7 @@
 
       <div id="adding">
         <div style="text-align: center">
-          <button class="btn-info" v-on:click="adding">LISA</button>
+          <button class="btn-info" v-on:click="addEvent()">LISA</button>
         </div>
       </div>
       <br />
@@ -45,7 +45,32 @@ export default {
     adding: function (event) {
       alert("Uus sündmus on lisatud!");
     },
+    async addEvent() {
+      const newEvent = {
+        event: this.message_event,
+        performer: this.message_performer,
+        date: this.message_time,
+        location: this.message_place
+
+      }
+      console.log(newEvent)
+      const res = await fetch('http://localhost:5000/events', {
+        method: 'POST',
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify(newEvent)
+      })
+    }
   },
+  data() {
+    return {
+      message_event: '',
+      message_performer: '',
+      message_time: '',
+      message_place: ''
+
+
+    }
+  }
 };
 </script>
 
