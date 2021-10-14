@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <div class="container">
       <Pealkiri>Lisa sündmus</Pealkiri>
       <br />
@@ -35,7 +36,11 @@
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
+  components: {
+    Header
+  },
   methods: {
     async addEvent() {
       const newEvent = {

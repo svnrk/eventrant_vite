@@ -1,8 +1,8 @@
 
 <template>
   <div>
-    <Header />
-    <router-view />
+    <!-- <Header @search-key="updateSearch"/> -->
+    <router-view :search="this.search"></router-view>
   </div>
 </template>
 
@@ -12,6 +12,17 @@ export default {
   name: "App",
   components: {
     Header,
+  },
+  data() {
+    return {
+      search: ''
+    }
+  },
+  methods: {
+    updateSearch(key){
+      console.log("search", key)
+      this.search = key
+    }
   },
 };
 </script>

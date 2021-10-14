@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header></Header>
     <div class="container">
       <title>Minu külastatud:</title>
     </div>
@@ -7,8 +8,11 @@
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
-  // name: MyEvent,
+  components: {
+    Header
+  },
 };
 </script>
 
