@@ -1,8 +1,10 @@
 
 <template>
   <div>
-    <Header />
-    <router-view />
+
+    <Header @search-key="updateSearch"/> -->
+    <router-view :search="this.search"></router-view>
+    <!-- <router-view/> -->
   </div>
 </template>
 
@@ -13,6 +15,20 @@ export default {
   components: {
     Header,
   },
+  data() {
+    return {
+      search: ''
+    }
+  },
+  methods: {
+    updateSearch(key){
+      console.log("search", key)
+      this.search = key
+    }
+  },
+  created () {
+    this.search = ""
+  }
 };
 </script>
 

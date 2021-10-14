@@ -1,5 +1,4 @@
 <template>
-  <!-- <img alt="logo" src="../assets/logo1.png" width="200" /> -->
   <header>
     <h1 @click="goHome()" class="fix-stroke">eventrant</h1>
     <input
@@ -17,11 +16,18 @@
       <router-link to="/"></router-link>
     </div>
   </header>
-</template>s
+  <!-- <AllEvents :search="search" v-show="1"/> -->
+</template>
 
 <script>
+import AllEvents from './AllEvents.vue'
+
 export default {
   name: "Header",
+  components: {
+    AllEvents
+  },
+  emits: ['search-key'],
   methods: {
     goHome() {
       console.log("home");
@@ -40,14 +46,16 @@ export default {
       this.$router.push("settings");
     },
     submit() {
-      console.log(this.search);
+      console.log("sending ",this.search);
+      this.$emit('search-key', this.search)
+      this.$router.push("/");
     },
   },
   data() {
     return {
       search: "",
     };
-  },
+  }
 };
 </script>
 
