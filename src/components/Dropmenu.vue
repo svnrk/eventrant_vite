@@ -50,7 +50,7 @@ select option {
 }
 select {
   color:#000000;
-  margin: 3px;
+  margin: 10px;
 }
 
 </style>

@@ -30,6 +30,7 @@
           <button class='btn' @click="open_rate_window()">Sulge</button>
         </span>
         <Checkbox />
+        <button class='btn' @click="open_rate_window()">Salvesta</button>
       </div>
     </div>
   </div>
@@ -87,7 +88,7 @@ export default {
 .small_event {
     border: 1px solid #2c3e50;
     margin: 5px auto;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 10px;
     cursor: pointer;
     max-width: 500px;
@@ -124,5 +125,9 @@ span {
 }
 .btn {
   background-color: #473030;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 </style>
