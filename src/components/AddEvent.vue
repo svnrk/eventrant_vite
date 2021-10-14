@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <br />
       <Pealkiri>Lisa sündmus</Pealkiri>
       <br />
 
@@ -91,7 +90,7 @@ export default {
 }
 
 Pealkiri {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
   align-items: center;
   display: flex;
