@@ -31,7 +31,6 @@
         </span>
         <Checkbox />
       </div>
-    
     </div>
   </div>
 
@@ -74,7 +73,7 @@ export default {
     open_rate_window () {
       if (this.rate_window === true) {
         this.rate_window = false
-        // this.isOpen = false
+        this.isOpen = false
       } else {
         this.rate_window = true
         this.isOpen = true
