@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header></Header>
     <div class="container">
       <tekst>My profile</tekst>
       <br />
@@ -13,8 +14,12 @@
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
   // name: AddEvent,
+  components: {
+    Header
+  },
 };
 </script>
 

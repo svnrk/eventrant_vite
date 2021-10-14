@@ -1,10 +1,8 @@
 
 <template>
   <div>
-
-    <Header @search-key="updateSearch"/> -->
+    <!-- <Header @search-key="updateSearch"/> -->
     <router-view :search="this.search"></router-view>
-    <!-- <router-view/> -->
   </div>
 </template>
 
@@ -26,9 +24,6 @@ export default {
       this.search = key
     }
   },
-  created () {
-    this.search = ""
-  }
 };
 </script>
 

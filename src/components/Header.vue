@@ -16,17 +16,12 @@
       <router-link to="/"></router-link>
     </div>
   </header>
-  <!-- <AllEvents :search="search" v-show="1"/> -->
 </template>
 
 <script>
-import AllEvents from './AllEvents.vue'
 
 export default {
   name: "Header",
-  components: {
-    AllEvents
-  },
   emits: ['search-key'],
   methods: {
     goHome() {

@@ -84,6 +84,13 @@
       "date": "d",
       "location": "f",
       "id": 7
+    },
+    {
+      "event": "",
+      "performer": "",
+      "date": "",
+      "location": "",
+      "id": 8
     }
   ],
   "performers": [
