@@ -2,7 +2,7 @@
   <div>
     <Header></Header>
     <div class="container">
-      <title>Minu sündmused:</title>
+      <title>Minu külastatud:</title>
     </div>
   </div>
 </template>

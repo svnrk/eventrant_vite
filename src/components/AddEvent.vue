@@ -2,28 +2,23 @@
   <div>
     <Header/>
     <div class="container">
-      <br />
       <Pealkiri>Lisa sündmus</Pealkiri>
       <br />
 
       <div class="borders">
         <Small_Text_header>Üritus:</Small_Text_header>
-        <p style="white-space: pre-line">{{ message_event }}</p>
         <textarea v-model="message_event" placeholder="lisa üritus"></textarea>
 
         <Small_Text_header>Esineja:</Small_Text_header>
-        <p style="white-space: pre-line">{{ message_performer }}</p>
         <textarea
           v-model="message_performer"
           placeholder="lisa esineja(d)"
         ></textarea>
 
         <Small_Text_header>Aeg:</Small_Text_header>
-        <p style="white-space: pre-line">{{ message_time }}</p>
         <textarea v-model="message_time" placeholder="lisa aeg"></textarea>
 
         <Small_Text_header>Koht:</Small_Text_header>
-        <p style="white-space: pre-line">{{ message_place }}</p>
         <textarea v-model="message_place" placeholder="lisa koht"></textarea>
         <br />
       </div>
@@ -48,7 +43,6 @@ export default {
   },
   methods: {
     async addEvent() {
-      alert("Uus sündmus on lisatud!");
       const newEvent = {
         event: this.message_event,
         performer: this.message_performer,
@@ -61,6 +55,8 @@ export default {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(newEvent),
       });
+      console.log("home");
+      this.$router.push("/");
     },
   },
   data() {
@@ -96,7 +92,7 @@ export default {
 }
 
 Pealkiri {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
   align-items: center;
   display: flex;
