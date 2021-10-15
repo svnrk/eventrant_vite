@@ -96,9 +96,9 @@ export default {
       const rc = eventToUpdate.ratings_count
       const temp_avg_value = (eventToUpdate.avg_rating * rc + this.avg_value) / (rc+1)
 
-      const temp_performer_rating = eventToUpdate.performer_rating
-      const temp_public_rating = eventToUpdate.public_rating
-      const temp_organization_rating = eventToUpdate.organization_rating
+      let temp_performer_rating = eventToUpdate.performer_rating
+      let temp_public_rating = eventToUpdate.public_rating
+      let temp_organization_rating = eventToUpdate.organization_rating
 
       console.log("check",eventToUpdate.avg_rating, temp_avg_value)
       if(this.performer_value > 0) {
@@ -106,6 +106,7 @@ export default {
         temp_public_rating = (eventToUpdate.public_rating * rc + this.audience_value) / (rc+1)
         temp_organization_rating = (eventToUpdate.organization_rating * rc + this.org_value) / (rc+1)
       }
+      
       
       const temp_rc = rc+1
 
