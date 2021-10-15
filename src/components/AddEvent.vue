@@ -48,6 +48,11 @@ export default {
         performer: this.message_performer,
         date: this.message_time,
         location: this.message_place,
+        avg_rating: 0,
+        performer_rating: 0,
+        audience_rating: 0,
+        organization_rating: 0,
+        ratings_count: 0
       };
       console.log(newEvent);
       const res = await fetch("http://localhost:5000/events", {

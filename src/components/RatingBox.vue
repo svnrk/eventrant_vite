@@ -4,7 +4,7 @@
         <div class="rating_display">
 
             <span>
-                <text>Publik: {{isValues(event.public_rating)}}/5</text>
+                <text>Publik: {{isValues(event.audience_rating)}}/5</text>
                 <text>Korraldus: {{isValues(event.organization_rating)}}/5</text>
                 <text>Arvustusi kokku: {{isValues(event.ratings_count)}}</text>
             </span>
@@ -45,13 +45,11 @@ span {
       text-align: right;
     }
 text {
-        font-size: 15px;
         color: rgb(172, 154, 154);
         display: flex;
         justify-content: space-between;
         align-items: 'position';
-        margin-bottom: 5px;
-        padding-bottom: 1px;
+        line-height: 27px;
     }
 .rating_display {
     margin-bottom: 15px;
