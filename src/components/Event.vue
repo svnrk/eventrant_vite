@@ -29,7 +29,7 @@
         <span>
           <button class='btn' @click="open_rate_window()">Sulge</button>
         </span>
-        <Checkbox :id="event.id"/>
+        <Checkbox :id="event.id" @record-button="record_button()"/>
         <!-- <button class='btn' @click="open_rate_window()">Salvesta</button> -->
       </div>
     </div>
@@ -45,6 +45,7 @@ import RatingBox from './RatingBox.vue'
 export default {
   components: { Rating, Checkbox, RatingBox },
   name: 'Event',
+  emits: ['reload'],
   props: {
     event: Object
   },
@@ -79,7 +80,14 @@ export default {
         this.rate_window = true
         this.isOpen = true
       }
-    }
+    },
+    record_button() {
+      this.rate_window = false
+      this.isOpen = true
+
+      // this.$emit('reload', this.event.id)
+    },
+
   }
 }
 </script>

@@ -58,6 +58,7 @@ import Dropmenu from "./Dropmenu.vue";
 export default {
   name: "Checkobx",
   components: { Dropmenu },
+  emits: ['record-button'],
 
   data() {
     return {
@@ -90,9 +91,46 @@ export default {
     },
     async sendRatings() {
       console.log(this.id, this.avg_value, this.performer_value, this.audience_value, this.org_value)
+      const eventToUpdate = await this.fetchEvent(this.id)
 
+      const rc = eventToUpdate.ratings_count
+      const temp_avg_value = (eventToUpdate.avg_rating * rc + this.avg_value) / (rc+1)
 
+      const temp_performer_rating = eventToUpdate.performer_rating
+      const temp_public_rating = eventToUpdate.public_rating
+      const temp_organization_rating = eventToUpdate.organization_rating
 
+      console.log("check",eventToUpdate.avg_rating, temp_avg_value)
+      if(this.performer_value > 0) {
+        temp_performer_rating = (eventToUpdate.performer_rating * rc + this.performer_value) / (rc+1)
+        temp_public_rating = (eventToUpdate.public_rating * rc + this.audience_value) / (rc+1)
+        temp_organization_rating = (eventToUpdate.organization_rating * rc + this.org_value) / (rc+1)
+      }
+      
+      const temp_rc = rc+1
+
+      const updatedEvent = {...eventToUpdate, 
+        avg_rating: temp_avg_value, 
+        performer_rating: temp_performer_rating, 
+        public_rating: temp_public_rating, 
+        organization_rating: temp_organization_rating,
+        ratings_count: temp_rc}
+      
+      const res = await fetch(`http://localhost:5000/events/${this.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(updatedEvent)
+      })
+      this.$emit('record-button')
+    },
+    async fetchEvent (id) {
+
+      const res = await fetch(`http://localhost:5000/events/${id}`)
+      const data = await res.json()
+
+      return data
     }
 
   },

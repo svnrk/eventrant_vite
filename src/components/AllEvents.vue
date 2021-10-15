@@ -2,7 +2,7 @@
     <div>
         <Header @search-key="updateSearch"/>
         <div class="container">
-            <Events :events="filteredList"/>
+            <Events :events="filteredList" @reload="this.reloading"/>
         </div>
     </div>
 </template>
@@ -35,6 +35,13 @@ export default {
 
       return data
     },
+    async fetchEvent (id) {
+      console.log("fetch", id)
+      const res = await fetch(`http://localhost:5000/events/${id}`)
+      const data = await res.json()
+
+      return data
+    },
     getFilteredList() {
       return this.events.filter(event => {
         console.log("filter", this.search)
@@ -44,7 +51,13 @@ export default {
       console.log("search", key)
       this.search = key
       this.filteredList =  this.getFilteredList()
-    }
+    },
+    // async reloading(){
+    //   console.log("reloading")
+    //   this.events = await this.fetchEvents()
+    //   this.filteredList = this.getFilteredList()
+    //   this.$forceUpdate()
+    // }
   },
   async created () {
     console.log("create")

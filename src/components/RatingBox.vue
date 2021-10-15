@@ -24,8 +24,8 @@ export default {
     },
     methods: {
         isValues (value) {
-            if (value > 0 && value <= 5) {
-                return value
+            if (value > 0) {
+                return Number((value).toFixed(1))
             } 
             else {
                 return ' -'
