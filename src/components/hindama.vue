@@ -44,10 +44,11 @@
           <span :key="i" v-for="i in this.org_value" @click="organizationRatingRecord(Math.abs(i-this.org_value-1))">★</span>
         </div>
       </span>
-     
     </div>
     <label for="">Hinda täpsemalt? </label>
     <input type="checkbox" id="checkbox" value="true" v-model="valik" />
+    <br>
+    <button id=" kala" class='btn' @click="sendRatings()">Salvesta</button>
   </div>
 </template>
 
@@ -61,12 +62,14 @@ export default {
   data() {
     return {
       valik: false,
-      // value: 0,
       avg_value: 0,
       performer_value: 0,
       audience_value: 0,
       org_value: 0,
     };
+  },
+  props: {
+    id: Number
   },
   methods: {
     avgRatingRecord(value) {
@@ -85,6 +88,12 @@ export default {
       this.org_value = value
       console.log("org", value);
     },
+    async sendRatings() {
+      console.log(this.id, this.avg_value, this.performer_value, this.audience_value, this.org_value)
+
+
+
+    }
 
   },
 };

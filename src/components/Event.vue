@@ -29,8 +29,8 @@
         <span>
           <button class='btn' @click="open_rate_window()">Sulge</button>
         </span>
-        <Checkbox />
-        <button class='btn' @click="open_rate_window()">Salvesta</button>
+        <Checkbox :id="event.id"/>
+        <!-- <button class='btn' @click="open_rate_window()">Salvesta</button> -->
       </div>
     </div>
   </div>
