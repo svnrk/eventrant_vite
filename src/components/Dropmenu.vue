@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     valueprint (value) {
-      console.log("value", value)
+      console.log('value', value)
     }
   }
 }

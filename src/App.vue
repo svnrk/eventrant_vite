@@ -1,30 +1,27 @@
 
 <template>
   <div>
-    <!-- <Header @search-key="updateSearch"/> -->
     <router-view :search="this.search"></router-view>
   </div>
 </template>
 
 <script >
-import Header from "./components/Header.vue";
+// import Header from './components/Header.vue'
 export default {
-  name: "App",
-  components: {
-    Header,
-  },
-  data() {
+  name: 'App',
+  components: {},
+  data () {
     return {
       search: ''
     }
   },
   methods: {
-    updateSearch(key){
-      console.log("search", key)
+    updateSearch (key) {
+      console.log('search', key)
       this.search = key
     }
-  },
-};
+  }
+}
 </script>
 
 <style>

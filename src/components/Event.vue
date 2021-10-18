@@ -81,12 +81,12 @@ export default {
         this.isOpen = true
       }
     },
-    record_button() {
+    record_button () {
       this.rate_window = false
       this.isOpen = true
 
       // this.$emit('reload', this.event.id)
-    },
+    }
 
   }
 }

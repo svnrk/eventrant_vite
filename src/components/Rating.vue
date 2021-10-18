@@ -10,14 +10,6 @@
         <text>Kellaaeg: {{yritus.time}}</text>
         <text>Koht: {{yritus.location}}</text>
 
-        <!-- <Small_text_header>Hinnang</Small_text_header>
-        <span>
-          <Text1>Publik: {{isValues(yritus.public_rating)}}/5</Text1>
-          <Text1>Korraldus: {{isValues(yritus.organization_rating)}}/5</Text1>
-        </span>
-        <Text1>Üldhinnang: {{isValues(yritus.avg_rating)}}/5</Text1>
-        <Text1>Esineja: {{isValues(yritus.performer_rating)}}/5</Text1>
-        <Text1>Arvustusi kokku: {{isValues(yritus.ratings_count)}}</Text1> -->
     </div>
 
 </template>
@@ -55,15 +47,6 @@ export default {
         }
       })
     },
-    // open_add_window () {
-    //   if (this.add_window === true) {
-    //     this.add_window = false
-    //     console.log(this.add_window)
-    //   } else {
-    //     this.add_window = true
-    //     console.log(this.add_window)
-    //   }
-    // }
 
   },
 

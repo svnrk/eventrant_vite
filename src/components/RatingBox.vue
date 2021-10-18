@@ -12,26 +12,25 @@
             <text>Esineja: {{isValues(event.performer_rating)}}/5</text>
             <text> </text>
         </div>
-       
+
   </div>
 </template>
 
 <script>
 export default {
-    name: 'RatingBox',
-    props: {
-        event: Object
-    },
-    methods: {
-        isValues (value) {
-            if (value > 0) {
-                return Number((value).toFixed(1))
-            } 
-            else {
-                return ' -'
-            }
-        }
+  name: 'RatingBox',
+  props: {
+    event: Object
+  },
+  methods: {
+    isValues (value) {
+      if (value > 0) {
+        return Number((value).toFixed(1))
+      } else {
+        return ' -'
+      }
     }
+  }
 
 }
 </script>

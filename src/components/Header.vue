@@ -21,37 +21,37 @@
 <script>
 
 export default {
-  name: "Header",
+  name: 'Header',
   emits: ['search-key'],
   methods: {
-    goHome() {
-      console.log("home");
-      this.$router.push("/");
+    goHome () {
+      console.log('home')
+      this.$router.push('/')
     },
-    addEvent() {
-      console.log("add");
-      this.$router.push("addevent");
+    addEvent () {
+      console.log('add')
+      this.$router.push('addevent')
     },
-    myEvents() {
-      console.log("my");
-      this.$router.push("myevent");
+    myEvents () {
+      console.log('my')
+      this.$router.push('myevent')
     },
-    goToSettings() {
-      console.log("click");
-      this.$router.push("settings");
+    goToSettings () {
+      console.log('click')
+      this.$router.push('settings')
     },
-    submit() {
-      console.log("sending ",this.search);
+    submit () {
+      console.log('sending ', this.search)
       this.$emit('search-key', this.search)
-      this.$router.push("/");
-    },
+      this.$router.push('/')
+    }
   },
-  data() {
+  data () {
     return {
-      search: "",
-    };
+      search: ''
+    }
   }
-};
+}
 </script>
 
 <style scoped>

@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import Header from "./Header.vue";
+import Header from './Header.vue'
 export default {
   components: {
     Header
   },
   methods: {
-    async addEvent() {
+    async addEvent () {
       const newEvent = {
         event: this.message_event,
         performer: this.message_performer,
@@ -53,26 +53,26 @@ export default {
         audience_rating: 0,
         organization_rating: 0,
         ratings_count: 0
-      };
-      console.log(newEvent);
-      const res = await fetch("http://localhost:5000/events", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(newEvent),
-      });
-      console.log("home");
-      this.$router.push("/");
-    },
+      }
+      console.log(newEvent)
+      const res = await fetch('http://localhost:5000/events', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify(newEvent)
+      })
+      console.log('home')
+      this.$router.push('/')
+    }
   },
-  data() {
+  data () {
     return {
-      message_event: "",
-      message_performer: "",
-      message_time: "",
-      message_place: "",
-    };
-  },
-};
+      message_event: '',
+      message_performer: '',
+      message_time: '',
+      message_place: ''
+    }
+  }
+}
 </script>
 
 <style scoped>
