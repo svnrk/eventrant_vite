@@ -7,11 +7,11 @@
       "location": "Kolme Konna Trahter, Elva",
       "date": "10.10.2021",
       "time": "19.00",
-      "avg_rating": 2.7433451641526174,
-      "performer_rating": 0.5263407688656858,
-      "public_rating": 0.32130991931656383,
-      "organization_rating": 0.6288561936402469,
-      "ratings_count": 92
+      "avg_rating": 2.7594442032132003,
+      "performer_rating": 0.5789718163366288,
+      "audience_rating": 0.3783033252885518,
+      "organization_rating": 0.6899443597330076,
+      "ratings_count": 94
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "time": "19.00",
       "avg_rating": 2.085714285714286,
       "performer_rating": 2,
-      "public_rating": 0,
+      "audience_rating": 0,
       "organization_rating": 5,
       "ratings_count": 35
     },
@@ -35,7 +35,7 @@
       "time": "13.00",
       "avg_rating": 1.4285714285714286,
       "performer_rating": 2,
-      "public_rating": 0,
+      "audience_rating": 0,
       "organization_rating": 4,
       "ratings_count": 7
     },
@@ -47,10 +47,10 @@
       "date": "10.10.2022",
       "time": "19.00",
       "avg_rating": 4,
-      "performer_rating": 0,
-      "public_rating": 0,
-      "organization_rating": 0,
-      "ratings_count": 2
+      "performer_rating": 1.25,
+      "audience_rating": 1.25,
+      "organization_rating": 1.25,
+      "ratings_count": 4
     },
     {
       "id": 5,
@@ -61,7 +61,7 @@
       "time": "19.00",
       "avg_rating": 1,
       "performer_rating": 0,
-      "public_rating": 0,
+      "audience_rating": 0,
       "organization_rating": 0,
       "ratings_count": 0
     },
@@ -74,7 +74,7 @@
       "time": "13.00",
       "avg_rating": 0,
       "performer_rating": 0,
-      "public_rating": 0,
+      "audience_rating": 0,
       "organization_rating": 0,
       "ratings_count": 0
     }

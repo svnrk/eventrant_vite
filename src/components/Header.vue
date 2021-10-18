@@ -26,6 +26,7 @@ export default {
   methods: {
     goHome () {
       console.log('home')
+      this.$emit('search-key', '')
       this.$router.push('/')
     },
     addEvent () {
@@ -43,7 +44,8 @@ export default {
     submit () {
       console.log('sending ', this.search)
       this.$emit('search-key', this.search)
-      this.$router.push('/')
+      this.search = ''
+      // this.$router.push('/')
     }
   },
   data () {
