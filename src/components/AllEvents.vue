@@ -45,7 +45,10 @@ export default {
     getFilteredList() {
       return this.events.filter(event => {
         console.log("filter", this.search)
-        return event.event.toLowerCase().includes(this.search.toLowerCase())})
+        return event.event.toLowerCase().includes(this.search.toLowerCase()) || 
+        event.performer.toLowerCase().includes(this.search.toLowerCase()) ||
+        event.location.toLowerCase().includes(this.search.toLowerCase())
+        })
     },
     updateSearch(key){
       console.log("search", key)
